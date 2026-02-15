@@ -442,7 +442,8 @@ h4 { font-size: 20px; }
     color: var(--color-gold);
     line-height: 1;
     margin-bottom: 15px;
-    opacity: 0.5;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(212, 165, 116, 0.4), 0 0 30px rgba(212, 165, 116, 0.15);
 }
 
 .testimonial-text {
