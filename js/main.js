@@ -46,6 +46,7 @@ if (fadeElements.length > 0) {
 const carousel = document.querySelector('.carousel');
 
 if (carousel) {
+    const container = carousel.querySelector('.carousel-container');
     const track = carousel.querySelector('.carousel-track');
     const cards = track.querySelectorAll('.testimonial-card');
     const prevBtn = carousel.querySelector('.carousel-btn-prev');
@@ -54,6 +55,14 @@ if (carousel) {
     const total = cards.length;
     let current = 0;
     let autoTimer = null;
+
+    // Set container height to match current card
+    function updateHeight() {
+        const card = cards[current];
+        if (card && container) {
+            container.style.height = card.offsetHeight + 'px';
+        }
+    }
 
     // Build dots
     cards.forEach((_, i) => {
@@ -71,6 +80,7 @@ if (carousel) {
         current = ((index % total) + total) % total;
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
         dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        updateHeight();
         resetAuto();
     }
 
@@ -123,6 +133,10 @@ if (carousel) {
         if (e.key === 'ArrowLeft') prev();
         if (e.key === 'ArrowRight') next();
     });
+
+    // Set initial height and update on resize
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
 
     startAuto();
 }

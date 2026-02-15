@@ -417,11 +417,13 @@ h4 { font-size: 20px; }
 .carousel-container {
     position: relative;
     overflow: hidden;
+    transition: height 0.45s ease;
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.45s ease;
+    align-items: flex-start;
 }
 
 .testimonial-card {
