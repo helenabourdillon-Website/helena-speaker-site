@@ -406,22 +406,32 @@ h4 { font-size: 20px; }
     overflow: hidden;
 }
 
-/* --- Testimonials --- */
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+/* --- Testimonials Carousel --- */
+.carousel {
     margin-top: 40px;
-    max-width: 1000px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.45s ease;
+}
+
 .testimonial-card {
+    min-width: 100%;
+    flex-shrink: 0;
     background: var(--color-bg-elevated);
-    padding: 40px;
+    padding: 45px 50px;
     border: 1px solid var(--color-border-light);
     position: relative;
+    box-sizing: border-box;
 }
 
 .testimonial-quote-mark {
@@ -451,6 +461,62 @@ h4 { font-size: 20px; }
     font-size: 13px;
     color: var(--color-text-muted);
     margin-top: 3px;
+}
+
+/* Carousel arrows */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 2;
+}
+
+.carousel-btn:hover {
+    background: var(--color-gold);
+    color: var(--color-bg-dark);
+}
+
+.carousel-btn-prev {
+    left: -60px;
+}
+
+.carousel-btn-next {
+    right: -60px;
+}
+
+/* Carousel dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-text-muted);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--color-gold);
+    transform: scale(1.2);
 }
 
 /* --- CTA Section --- */
@@ -743,6 +809,9 @@ h4 { font-size: 20px; }
     h1 { font-size: 44px; }
     h2 { font-size: 34px; }
 
+    .carousel-btn-prev { left: -50px; }
+    .carousel-btn-next { right: -50px; }
+
     .hero {
         padding: 40px;
         gap: 40px;
@@ -764,12 +833,16 @@ h4 { font-size: 20px; }
         gap: 40px;
     }
 
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 40px;
+    .carousel-btn {
+        display: none;
+    }
+
+    .carousel {
+        max-width: 100%;
+    }
+
+    .testimonial-card {
+        padding: 30px 25px;
     }
 
     .topics-grid {
