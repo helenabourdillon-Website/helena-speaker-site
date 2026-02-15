@@ -42,24 +42,45 @@ if (fadeElements.length > 0) {
     fadeElements.forEach(el => observer.observe(el));
 }
 
-// Testimonials Carousel
+// Testimonials Carousel (infinite loop)
 const carousel = document.querySelector('.carousel');
 
 if (carousel) {
     const container = carousel.querySelector('.carousel-container');
     const track = carousel.querySelector('.carousel-track');
-    const cards = track.querySelectorAll('.testimonial-card');
+    const realCards = Array.from(track.querySelectorAll('.testimonial-card'));
     const prevBtn = carousel.querySelector('.carousel-btn-prev');
     const nextBtn = carousel.querySelector('.carousel-btn-next');
     const dotsContainer = carousel.querySelector('.carousel-dots');
-    const total = cards.length;
-    let current = 0;
+    const total = realCards.length;
     let autoTimer = null;
+    let isTransitioning = false;
 
-    // Set container height to tallest card so no content gets clipped
+    // Clone first and last cards for seamless loop
+    const firstClone = realCards[0].cloneNode(true);
+    const lastClone = realCards[total - 1].cloneNode(true);
+    firstClone.setAttribute('aria-hidden', 'true');
+    lastClone.setAttribute('aria-hidden', 'true');
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, track.firstChild);
+
+    // Track position includes the prepended clone, so real slide 0 = position 1
+    let pos = 1;
+
+    function setPos(p, animate) {
+        if (animate) {
+            track.style.transition = 'transform 0.45s ease';
+        } else {
+            track.style.transition = 'none';
+        }
+        track.style.transform = 'translateX(-' + (p * 100) + '%)';
+        pos = p;
+    }
+
+    // Set container height to tallest card
     function updateHeight() {
         let maxH = 0;
-        cards.forEach(card => {
+        realCards.forEach(function(card) {
             if (card.offsetHeight > maxH) maxH = card.offsetHeight;
         });
         if (container && maxH > 0) {
@@ -68,43 +89,71 @@ if (carousel) {
     }
 
     // Build dots
-    cards.forEach((_, i) => {
-        const dot = document.createElement('button');
+    realCards.forEach(function(_, i) {
+        var dot = document.createElement('button');
         dot.classList.add('carousel-dot');
         if (i === 0) dot.classList.add('active');
         dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
-        dot.addEventListener('click', () => goTo(i));
+        dot.addEventListener('click', function() { goToSlide(i); });
         dotsContainer.appendChild(dot);
     });
 
-    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    var dots = dotsContainer.querySelectorAll('.carousel-dot');
 
-    function goTo(index) {
-        current = ((index % total) + total) % total;
-        track.style.transform = 'translateX(-' + (current * 100) + '%)';
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
-        updateHeight();
+    function updateDots() {
+        var realIndex = ((pos - 1) % total + total) % total;
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === realIndex); });
+    }
+
+    // After a transition ends, silently snap if we're on a clone
+    track.addEventListener('transitionend', function() {
+        isTransitioning = false;
+        if (pos === 0) {
+            // On the last-clone (prepended), snap to real last
+            setPos(total, false);
+        } else if (pos === total + 1) {
+            // On the first-clone (appended), snap to real first
+            setPos(1, false);
+        }
+    });
+
+    function goToSlide(realIndex) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        setPos(realIndex + 1, true);
+        updateDots();
         resetAuto();
     }
 
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
+    function next() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        setPos(pos + 1, true);
+        updateDots();
+        resetAuto();
+    }
+
+    function prev() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        setPos(pos - 1, true);
+        updateDots();
+        resetAuto();
+    }
 
     if (prevBtn) prevBtn.addEventListener('click', prev);
     if (nextBtn) nextBtn.addEventListener('click', next);
 
     // Swipe support
-    let touchStartX = 0;
-    let touchEndX = 0;
+    var touchStartX = 0;
 
-    track.addEventListener('touchstart', (e) => {
+    track.addEventListener('touchstart', function(e) {
         touchStartX = e.changedTouches[0].screenX;
         pauseAuto();
     }, { passive: true });
 
-    track.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
+    track.addEventListener('touchend', function(e) {
+        var diff = touchStartX - e.changedTouches[0].screenX;
         if (Math.abs(diff) > 50) {
             if (diff > 0) next();
             else prev();
@@ -132,12 +181,13 @@ if (carousel) {
 
     // Keyboard
     carousel.setAttribute('tabindex', '0');
-    carousel.addEventListener('keydown', (e) => {
+    carousel.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowLeft') prev();
         if (e.key === 'ArrowRight') next();
     });
 
-    // Set initial height and update on resize
+    // Initialise: show first real card (position 1, no animation)
+    setPos(1, false);
     updateHeight();
     window.addEventListener('resize', updateHeight);
 
