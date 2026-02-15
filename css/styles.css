@@ -232,8 +232,12 @@ h4 { font-size: 20px; }
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 18px 35px;
 }
 
 .hero-image {
