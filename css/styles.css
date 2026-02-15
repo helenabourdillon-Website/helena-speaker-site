@@ -423,12 +423,12 @@ h4 { font-size: 20px; }
 .carousel-track {
     display: flex;
     transition: transform 0.45s ease;
-    align-items: flex-start;
 }
 
 .testimonial-card {
+    width: 100%;
     min-width: 100%;
-    flex-shrink: 0;
+    flex: 0 0 100%;
     background: var(--color-bg-elevated);
     padding: 45px 50px;
     border: 1px solid var(--color-border-light);

@@ -56,11 +56,14 @@ if (carousel) {
     let current = 0;
     let autoTimer = null;
 
-    // Set container height to match current card
+    // Set container height to tallest card so no content gets clipped
     function updateHeight() {
-        const card = cards[current];
-        if (card && container) {
-            container.style.height = card.offsetHeight + 'px';
+        let maxH = 0;
+        cards.forEach(card => {
+            if (card.offsetHeight > maxH) maxH = card.offsetHeight;
+        });
+        if (container && maxH > 0) {
+            container.style.height = maxH + 'px';
         }
     }
 
