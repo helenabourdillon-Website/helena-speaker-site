@@ -207,15 +207,14 @@ h4 { font-size: 20px; }
     grid-template-columns: 1fr 1fr;
     align-items: start;
     padding: 60px;
-    padding-top: 120px;
-    padding-bottom: 40px;
-    gap: 80px;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    gap: 60px;
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
 }
 
 .hero-content h1 {
@@ -252,13 +251,13 @@ h4 { font-size: 20px; }
 
 /* --- Credentials Strip --- */
 .credentials-section {
-    padding: 50px 60px;
-    border-top: 1px solid var(--color-border-light);
+    padding: 25px 60px 50px;
 }
 
 .credentials {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -281,7 +280,7 @@ h4 { font-size: 20px; }
 /* --- Client Logos --- */
 .logos-section {
     background: var(--color-bg-dark);
-    padding: 60px;
+    padding: 50px 60px 65px;
     border-top: 1px solid rgba(212, 165, 116, 0.1);
 }
 
@@ -291,16 +290,15 @@ h4 { font-size: 20px; }
     color: var(--color-text-subtle);
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .logos-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-    max-width: 1100px;
+    justify-items: center;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -320,7 +318,7 @@ h4 { font-size: 20px; }
 
 /* --- Section Styles --- */
 .section {
-    padding: 100px 60px;
+    padding: 70px 60px;
 }
 
 .section-dark {
@@ -396,7 +394,7 @@ h4 { font-size: 20px; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .testimonial-card {
@@ -438,7 +436,7 @@ h4 { font-size: 20px; }
 /* --- CTA Section --- */
 .cta-section {
     text-align: center;
-    padding: 100px 60px;
+    padding: 70px 60px;
 }
 
 .cta-section h2 {
@@ -519,12 +517,17 @@ h4 { font-size: 20px; }
 }
 
 .footer-bottom {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 40px;
     padding-top: 30px;
     border-top: 1px solid var(--color-border-light);
     font-size: 13px;
     color: var(--color-text-muted);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- Page Header (inner pages) --- */
@@ -616,6 +619,31 @@ h4 { font-size: 20px; }
 .form-group select option {
     background: var(--color-bg-elevated);
     color: var(--color-text);
+}
+
+.form-consent {
+    margin-bottom: 30px;
+}
+
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.consent-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--color-gold);
+    cursor: pointer;
 }
 
 /* --- Credential List (About page) --- */
