@@ -12,8 +12,8 @@
     --color-gold-hover: #e8c49a;
     --color-text: #ffffff;
     --color-text-secondary: #888888;
-    --color-text-muted: #666666;
-    --color-text-subtle: #555555;
+    --color-text-muted: #999999;
+    --color-text-subtle: #aaaaaa;
     --color-border-gold: rgba(212, 165, 116, 0.2);
     --color-border-light: rgba(255, 255, 255, 0.1);
     --font-heading: 'Montserrat', sans-serif;
@@ -115,12 +115,13 @@ h4 { font-size: 20px; }
 }
 
 .btn-dark {
-    background: var(--color-bg);
-    color: var(--color-text);
+    background: var(--color-bg-elevated);
+    color: var(--color-gold);
 }
 
 .btn-dark:hover {
-    background: var(--color-bg-elevated);
+    background: #333333;
+    color: var(--color-gold-hover);
 }
 
 /* --- Navigation --- */
@@ -215,10 +216,11 @@ h4 { font-size: 20px; }
 .hero-content {
     display: flex;
     flex-direction: column;
+    padding-top: 40px;
 }
 
 .hero-content h1 {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     line-height: 1.15;
 }
 
@@ -226,7 +228,7 @@ h4 { font-size: 20px; }
     font-size: 18px;
     color: var(--color-text-secondary);
     line-height: 1.8;
-    margin-bottom: 35px;
+    margin-bottom: 55px;
     max-width: 500px;
 }
 
@@ -238,6 +240,8 @@ h4 { font-size: 20px; }
 
 .hero-buttons .btn {
     padding: 18px 35px;
+    min-width: 200px;
+    text-align: center;
 }
 
 .hero-image {
@@ -255,7 +259,7 @@ h4 { font-size: 20px; }
 
 /* --- Credentials Strip --- */
 .credentials-section {
-    padding: 25px 60px 50px;
+    padding: 25px 60px 65px;
 }
 
 .credentials {
@@ -275,7 +279,7 @@ h4 { font-size: 20px; }
 
 .credential-label {
     font-size: 12px;
-    color: var(--color-text-muted);
+    color: var(--color-gold);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 5px;
@@ -284,14 +288,13 @@ h4 { font-size: 20px; }
 /* --- Client Logos --- */
 .logos-section {
     background: var(--color-bg-dark);
-    padding: 50px 60px 65px;
-    border-top: 1px solid rgba(212, 165, 116, 0.1);
+    padding: 70px 60px 65px;
 }
 
 .logos-label {
     text-align: center;
     font-size: 12px;
-    color: var(--color-text-subtle);
+    color: var(--color-gold);
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 35px;
@@ -320,6 +323,15 @@ h4 { font-size: 20px; }
     opacity: 1;
 }
 
+/* --- Section Divider --- */
+.section-divider {
+    width: 120px;
+    height: 1px;
+    background: var(--color-gold);
+    margin: 0 auto;
+    opacity: 0.5;
+}
+
 /* --- Section Styles --- */
 .section {
     padding: 70px 60px;
@@ -336,7 +348,7 @@ h4 { font-size: 20px; }
 
 .section-label {
     font-size: 12px;
-    color: var(--color-text-subtle);
+    color: var(--color-gold);
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -369,28 +381,113 @@ h4 { font-size: 20px; }
 
 .keynote-points {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 .keynote-points li {
-    padding: 15px 0;
+    padding: 5px 0;
     padding-left: 30px;
     position: relative;
     color: var(--color-text-secondary);
     font-size: 16px;
     line-height: 1.6;
-    border-bottom: 1px solid var(--color-border-light);
 }
 
 .keynote-points li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 22px;
+    top: 12px;
     width: 8px;
     height: 8px;
     background: var(--color-gold);
     border-radius: 50%;
+}
+
+.keynote-points-centred {
+    margin-top: 25px;
+}
+
+.keynote-points-centred p {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 12px 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.keynote-points-centred p + p::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--color-gold);
+    opacity: 0.5;
+    margin: 0 auto 12px;
+}
+
+/* --- Image Carousel --- */
+.image-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-carousel-track {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-carousel-slide {
+    display: none;
+    width: 100%;
+    background: var(--color-bg-elevated);
+    border-radius: 8px;
+    height: 350px;
+}
+
+.image-carousel-slide.active {
+    display: block;
+}
+
+.image-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-carousel-slide.contain img {
+    object-fit: contain;
+}
+
+.image-carousel-slide.crop-top img {
+    object-position: top;
+}
+
+.image-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.image-carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-text-muted);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.image-carousel-dots .dot.active {
+    background: var(--color-gold);
 }
 
 /* --- Video Embed --- */
@@ -434,6 +531,10 @@ h4 { font-size: 20px; }
     border: 1px solid var(--color-border-light);
     position: relative;
     box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .testimonial-quote-mark {
@@ -443,7 +544,7 @@ h4 { font-size: 20px; }
     line-height: 1;
     margin-bottom: 15px;
     text-align: center;
-    text-shadow: 0 0 15px rgba(212, 165, 116, 0.4), 0 0 30px rgba(212, 165, 116, 0.15);
+    text-shadow: 0 0 15px rgba(212, 165, 116, 0.4), 0 0 30px rgba(212, 165, 116, 0.35);
 }
 
 .testimonial-text {
@@ -547,7 +648,7 @@ h4 { font-size: 20px; }
 
 /* --- Footer --- */
 .site-footer {
-    background: var(--color-bg-dark);
+    background: var(--color-bg);
     padding: 60px;
     border-top: 1px solid var(--color-border-light);
 }
@@ -621,9 +722,8 @@ h4 { font-size: 20px; }
 
 /* --- Page Header (inner pages) --- */
 .page-header {
-    padding: 80px 60px 60px;
+    padding: 30px 60px 30px;
     text-align: center;
-    border-bottom: 1px solid var(--color-border-light);
 }
 
 .page-header h1 {
@@ -651,6 +751,7 @@ h4 { font-size: 20px; }
     color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .content-block h3 {

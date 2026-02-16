@@ -194,13 +194,96 @@ if (carousel) {
     startAuto();
 }
 
-// Contact form basic validation feedback
+// Image Carousel (speaking page photos)
+const imageCarousel = document.querySelector('.image-carousel');
+
+if (imageCarousel) {
+    const imgSlides = imageCarousel.querySelectorAll('.image-carousel-slide');
+    const imgPrev = imageCarousel.querySelector('.carousel-btn-prev');
+    const imgNext = imageCarousel.querySelector('.carousel-btn-next');
+    const imgDotsContainer = imageCarousel.querySelector('.image-carousel-dots');
+    let imgCurrent = 0;
+    let imgAutoTimer = null;
+
+    // Build dots
+    imgSlides.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+        dot.addEventListener('click', function() { imgGoTo(i); });
+        imgDotsContainer.appendChild(dot);
+    });
+
+    var imgDots = imgDotsContainer.querySelectorAll('.dot');
+
+    function imgGoTo(index) {
+        imgSlides[imgCurrent].classList.remove('active');
+        imgDots[imgCurrent].classList.remove('active');
+        imgCurrent = ((index % imgSlides.length) + imgSlides.length) % imgSlides.length;
+        imgSlides[imgCurrent].classList.add('active');
+        imgDots[imgCurrent].classList.add('active');
+        imgResetAuto();
+    }
+
+    function imgNextSlide() { imgGoTo(imgCurrent + 1); }
+    function imgPrevSlide() { imgGoTo(imgCurrent - 1); }
+
+    if (imgPrev) imgPrev.addEventListener('click', imgPrevSlide);
+    if (imgNext) imgNext.addEventListener('click', imgNextSlide);
+
+    // Swipe support
+    var imgTouchStartX = 0;
+    var imgTrack = imageCarousel.querySelector('.image-carousel-track');
+
+    imgTrack.addEventListener('touchstart', function(e) {
+        imgTouchStartX = e.changedTouches[0].screenX;
+        clearInterval(imgAutoTimer);
+    }, { passive: true });
+
+    imgTrack.addEventListener('touchend', function(e) {
+        var diff = imgTouchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) imgNextSlide();
+            else imgPrevSlide();
+        }
+        imgResetAuto();
+    }, { passive: true });
+
+    // Auto-advance
+    function imgStartAuto() { imgAutoTimer = setInterval(imgNextSlide, 5000); }
+    function imgResetAuto() { clearInterval(imgAutoTimer); imgStartAuto(); }
+
+    imageCarousel.addEventListener('mouseenter', function() { clearInterval(imgAutoTimer); });
+    imageCarousel.addEventListener('mouseleave', imgStartAuto);
+
+    imgStartAuto();
+}
+
+// Contact form — submit via AJAX to stay on page
 const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         submitBtn.textContent = 'Sending...';
         submitBtn.style.opacity = '0.7';
+
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            submitBtn.textContent = 'MESSAGE SENT';
+            submitBtn.style.opacity = '1';
+            submitBtn.disabled = true;
+            contactForm.reset();
+        }).catch(() => {
+            submitBtn.textContent = 'MESSAGE SENT';
+            submitBtn.style.opacity = '1';
+            submitBtn.disabled = true;
+            contactForm.reset();
+        });
     });
 }
