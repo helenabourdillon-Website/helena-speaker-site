@@ -1090,6 +1090,12 @@ h4 { font-size: 20px; }
         margin-top: -25px;
     }
 
+    #contact-form .btn-primary {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
     .cta-section {
         padding: 60px 25px;
     }
