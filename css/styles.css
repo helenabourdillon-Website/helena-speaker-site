@@ -1090,9 +1090,7 @@ h4 { font-size: 20px; }
         margin-top: -25px;
     }
 
-    #contact-form .btn-primary {
-        display: block;
-        width: 100%;
+    #contact-form {
         text-align: center;
     }
 
