@@ -868,7 +868,7 @@ h4 { font-size: 20px; }
     color: var(--color-text-secondary);
     border-bottom: none;
     display: flex;
-    align-items: flex-start;
+    align-items: baseline;
     gap: 15px;
     text-align: justify;
 }
@@ -880,6 +880,8 @@ h4 { font-size: 20px; }
     background: var(--color-gold);
     border-radius: 50%;
     flex-shrink: 0;
+    position: relative;
+    top: -2px;
 }
 
 /* --- Speaking Topics Cards --- */
