@@ -1084,7 +1084,7 @@ h4 { font-size: 20px; }
     }
 
     .credentials-list {
-        margin-top: 0;
+        margin-top: -25px;
     }
 
     .cta-section {
