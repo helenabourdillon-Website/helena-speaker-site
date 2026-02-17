@@ -1112,6 +1112,10 @@ h4 { font-size: 20px; }
         margin-top: 30px;
     }
 
+    .credentials-divider {
+        margin-top: -15px;
+    }
+
     .home-desktop-points {
         display: none;
     }
