@@ -1052,11 +1052,12 @@ h4 { font-size: 20px; }
     }
 
     .logos-grid {
-        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 20px;
     }
 
     .client-logo {
-        height: 28px;
+        height: 25px;
     }
 
     .section {
