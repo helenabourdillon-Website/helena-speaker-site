@@ -671,6 +671,7 @@ h4 { font-size: 20px; }
     font-weight: 700;
     color: var(--color-gold);
     letter-spacing: 8px;
+    text-decoration: none;
     text-transform: uppercase;
     text-shadow: 0 0 10px rgba(212, 165, 116, 0.2), 0 0 25px rgba(212, 165, 116, 0.12);
 }
