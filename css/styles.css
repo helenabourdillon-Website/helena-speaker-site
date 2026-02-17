@@ -1107,6 +1107,10 @@ h4 { font-size: 20px; }
         text-align: center;
     }
 
+    #my-cal-inline {
+        height: 800px !important;
+    }
+
     .audience-learn {
         margin-top: 25px !important;
     }
