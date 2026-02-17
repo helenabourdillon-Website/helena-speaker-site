@@ -347,7 +347,7 @@ h4 { font-size: 20px; }
 }
 
 .section-label {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--color-gold);
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -862,7 +862,7 @@ h4 { font-size: 20px; }
     padding: 12px 0;
     font-size: 16px;
     color: var(--color-text-secondary);
-    border-bottom: 1px solid var(--color-border-light);
+    border-bottom: none;
     display: flex;
     align-items: center;
     gap: 15px;
