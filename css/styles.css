@@ -377,7 +377,7 @@ h4 { font-size: 20px; }
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: start;
+    align-items: end;
     margin-top: 0;
 }
 
