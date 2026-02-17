@@ -862,13 +862,17 @@ h4 { font-size: 20px; }
 }
 
 /* --- Credential List (About page) --- */
+.credentials-grid {
+    align-items: end;
+}
+
 .credentials-list {
     list-style: none;
     margin-top: 30px;
 }
 
 .credentials-list li {
-    padding: 12px 0;
+    padding: 6px 0;
     font-size: 16px;
     color: var(--color-text-secondary);
     border-bottom: none;
@@ -1089,6 +1093,10 @@ h4 { font-size: 20px; }
     .content-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .credentials-grid {
+        align-items: start;
     }
 
     .credentials-list {
