@@ -1049,15 +1049,18 @@ h4 { font-size: 20px; }
 
     .logos-section {
         padding: 40px 25px;
+        overflow: hidden;
     }
 
     .logos-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px 20px;
+        gap: 30px 15px;
+        max-width: 100%;
     }
 
     .client-logo {
-        height: 25px;
+        height: 22px;
+        max-width: 100%;
     }
 
     .section {
