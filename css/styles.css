@@ -649,8 +649,8 @@ h4 { font-size: 20px; }
 /* --- Footer --- */
 .site-footer {
     background: var(--color-bg);
-    padding: 60px;
-    border-top: 1px solid var(--color-border-light);
+    padding: 40px 60px;
+    border-top: none;
 }
 
 .footer-content {
