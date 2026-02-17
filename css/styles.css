@@ -728,7 +728,7 @@ h4 { font-size: 20px; }
 
 .page-header h1 {
     font-size: 48px;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 }
 
 .page-header p {
@@ -739,7 +739,7 @@ h4 { font-size: 20px; }
 }
 
 .page-header .section-label {
-    margin-top: 45px;
+    margin-top: 35px;
 }
 
 .page-header + .section {
