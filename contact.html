@@ -95,27 +95,29 @@
     <!-- Book a Call -->
     <section class="section">
         <div class="container">
-            <div class="fade-in" style="text-align: center; margin-bottom: 40px;">
-                <div class="section-label">Schedule a Call</div>
-                <h2>Book a <span class="gold">Discovery Call</span></h2>
-                <p>Prefer to chat? Book a Zoom call directly into my diary.</p>
-            </div>
-            <div class="fade-in" style="max-width: 700px; margin: 0 auto;">
-                <!-- Cal inline embed code -->
-                <div id="my-cal-inline" style="width:100%;height:100%;overflow:scroll"></div>
-                <script type="text/javascript">
-                (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-                Cal("init", {origin:"https://cal.com"});
-                Cal("inline", {
-                  elementOrSelector:"#my-cal-inline",
-                  calLink: "helenabourdillon",
-                  layout: "month_view",
-                  config: {
-                    theme: "dark"
-                  }
-                });
-                Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-                </script>
+            <div class="content-grid fade-in">
+                <div class="content-block">
+                    <div class="section-label">Schedule a Call</div>
+                    <h3>Book a <span class="gold">Discovery Call</span></h3>
+                    <p>Prefer to chat? Book a Zoom call directly into my diary to discuss your event, audience, and how I can help.</p>
+                </div>
+                <div class="content-block">
+                    <!-- Cal inline embed code -->
+                    <div id="my-cal-inline" style="width:100%;height:400px;overflow:scroll"></div>
+                    <script type="text/javascript">
+                    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                    Cal("init", {origin:"https://cal.com"});
+                    Cal("inline", {
+                      elementOrSelector:"#my-cal-inline",
+                      calLink: "helenabourdillon",
+                      layout: "month_view",
+                      config: {
+                        theme: "dark"
+                      }
+                    });
+                    Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+                    </script>
+                </div>
             </div>
         </div>
     </section>
