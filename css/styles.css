@@ -406,6 +406,10 @@ h4 { font-size: 20px; }
     border-radius: 50%;
 }
 
+.home-mobile-points {
+    display: none;
+}
+
 .keynote-points-centred {
     margin-top: 25px;
 }
@@ -1101,6 +1105,15 @@ h4 { font-size: 20px; }
 
     .keynote-right {
         padding-top: 25px !important;
+        text-align: center;
+    }
+
+    .home-desktop-points {
+        display: none;
+    }
+
+    .home-mobile-points {
+        display: block;
     }
 
     .cta-section {
