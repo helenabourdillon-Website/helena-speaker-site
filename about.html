@@ -35,9 +35,8 @@
         <a href="index.html" class="logo">HELENA BOURDILLON</a>
         <nav>
             <ul class="nav-links">
-                <li><a href="speaking.html">Speaking</a></li>
                 <li><a href="about.html" class="active">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <button class="nav-toggle" aria-label="Toggle navigation">
@@ -57,7 +56,7 @@
     </div>
 
     <!-- Bio Section -->
-    <section class="section" style="padding-top: 15px; padding-bottom: 40px;">
+    <section class="section" style="padding-top: 15px;">
         <div class="container">
             <div class="content-grid fade-in">
                 <div class="hero-image" style="height: auto; overflow: visible;">
@@ -97,6 +96,11 @@
         </div>
     </section>
 
+    <!-- Contact Button -->
+    <div class="section-divider"></div>
+    <div style="text-align: center; padding: 0;">
+        <a href="#contact" class="btn btn-primary">Contact Helena</a>
+    </div>
     <div class="section-divider"></div>
 
     <!-- Documentary -->
@@ -111,7 +115,7 @@
                     <iframe src="https://player.vimeo.com/video/791215649?h=0&title=0&byline=0&portrait=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Light Beams for Helena — Documentary Film"></iframe>
                 </div>
             </div>
-            <h2 class="fade-in" style="margin-top: 90px;">Helena's Story —<br><span class="gold">My Survival and Triumph over Mental Illness</span></h2>
+            <h2 class="fade-in" style="margin-top: 90px;">Helena&rsquo;s Story &mdash;<br><span class="gold">My Survival and Triumph over Mental Illness</span></h2>
             <p class="section-subtitle fade-in" style="margin: 20px auto 30px; text-align: center;">Simeon Quarrie, Vivida.co.uk 2018</p>
             <div class="video-embed fade-in" style="margin: 40px auto;">
                 <div style="padding: 56.25% 0 0 0; position: relative;">
@@ -121,11 +125,90 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="page-header" style="padding: 0 0 30px;">
+                <h2>Contact <span class="gold">Helena</span></h2>
+                <p>Interested in booking me for a keynote or workshop? Tell me about your event.</p>
+                <div class="section-label">Send a Message</div>
+            </div>
+        </div>
+        <div class="container" style="max-width: 700px;">
+            <div class="fade-in">
+                <form action="https://formspree.io/f/mlgwngnw" method="POST" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="you@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Enquiry Type</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Keynote Booking">Keynote Booking</option>
+                            <option value="Workshop Enquiry">Workshop Enquiry</option>
+                            <option value="Media / Press">Media / Press</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Tell me about your event — date, audience, format, and any other details..."></textarea>
+                    </div>
+                    <div class="form-group form-consent">
+                        <label class="consent-label">
+                            <input type="checkbox" name="consent" required>
+                            <span>I agree to the <a href="privacy.html" style="color: var(--color-gold);">Privacy Policy</a> and consent to HMB Group Ltd storing my details to respond to this enquiry.</span>
+                        </label>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+                <p style="text-align: center; margin-top: 30px; color: var(--color-text-secondary);">Or email me directly at <a href="mailto:Helena@HelenaBourdillon.com" style="color: var(--color-gold);">Helena@HelenaBourdillon.com</a></p>
+                <p style="text-align: center; margin-top: 50px; margin-bottom: -20px; font-size: 14px; font-weight: 600; color: #ffffff; letter-spacing: 3px; text-transform: uppercase;">If You Prefer to Zoom</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book a Call -->
+    <section class="section" id="book-a-call" style="padding-top: 0;">
+        <div class="container">
+            <div class="fade-in" style="text-align: center; margin-bottom: 40px;">
+                <div class="section-label">Schedule a Call</div>
+            </div>
+            <div class="fade-in">
+                <!-- Cal inline embed code -->
+                <div id="my-cal-inline" style="width:100%;height:500px;overflow:scroll"></div>
+                <script type="text/javascript">
+                (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                Cal("init", {origin:"https://cal.com"});
+                Cal("inline", {
+                  elementOrSelector:"#my-cal-inline",
+                  calLink: "helenabourdillon",
+                  layout: "month_view",
+                  config: {
+                    theme: "dark"
+                  }
+                });
+                Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
     <section class="section-gold">
         <div class="cta-section">
-            <h2>Bring Helena's Expertise to Your Stage</h2>
-            <a href="contact.html" class="btn btn-dark">Book Helena</a>
+            <h2>Ready to Raise Your Team&rsquo;s Performance?</h2>
+            <p>Book Helena for your next conference, leadership event, or team workshop.</p>
+            <a href="#contact" class="btn btn-dark">Contact Helena</a>
         </div>
     </section>
 
@@ -136,9 +219,8 @@
         <div class="footer-content">
             <a href="index.html" class="footer-logo">HELENA BOURDILLON</a>
             <ul class="footer-links">
-                <li><a href="speaking.html">Speaking</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
         <div class="footer-bottom">

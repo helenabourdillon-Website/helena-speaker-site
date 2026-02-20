@@ -216,32 +216,42 @@ h4 { font-size: 20px; }
 .hero-content {
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
+    align-items: center;
+    padding-top: 0;
+    min-height: 600px;
 }
 
 .hero-content h1 {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     line-height: 1.15;
+    align-self: stretch;
 }
 
 .hero-content p {
     font-size: 18px;
     color: var(--color-text-secondary);
     line-height: 1.8;
-    margin-bottom: 55px;
+    margin-bottom: 15px;
     text-align: justify;
-    max-width: 500px;
+    align-self: stretch;
+}
+
+.hero-content p:last-of-type {
+    margin-bottom: auto;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    align-self: stretch;
+    padding-top: 25px;
 }
 
 .hero-buttons .btn {
-    padding: 18px 35px;
-    min-width: 200px;
+    padding: 18px 55px;
+    flex: 1;
     text-align: center;
 }
 
@@ -260,7 +270,7 @@ h4 { font-size: 20px; }
 
 /* --- Credentials Strip --- */
 .credentials-section {
-    padding: 25px 60px 65px;
+    padding: 20px 60px;
 }
 
 .credentials {
@@ -289,7 +299,7 @@ h4 { font-size: 20px; }
 /* --- Client Logos --- */
 .logos-section {
     background: var(--color-bg-dark);
-    padding: 70px 60px 65px;
+    padding: 20px 60px;
 }
 
 .logos-label {
@@ -329,13 +339,13 @@ h4 { font-size: 20px; }
     width: 120px;
     height: 1px;
     background: var(--color-gold);
-    margin: 0 auto;
+    margin: 50px auto;
     opacity: 0.5;
 }
 
 /* --- Section Styles --- */
 .section {
-    padding: 70px 60px;
+    padding: 20px 60px;
 }
 
 .section-dark {
@@ -408,6 +418,22 @@ h4 { font-size: 20px; }
 
 .home-mobile-points {
     display: none;
+}
+
+/* --- I Speak At Grid --- */
+.speak-at-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 60px;
+    max-width: 700px;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.speak-at-grid p {
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    margin: 0;
 }
 
 .keynote-points-centred {
@@ -953,12 +979,16 @@ h4 { font-size: 20px; }
         gap: 40px;
     }
 
+    .hero-content {
+        min-height: 450px;
+    }
+
     .hero-image {
         height: 450px;
     }
 
     .section {
-        padding: 80px 40px;
+        padding: 20px 40px;
     }
 
     .site-header {
@@ -1034,6 +1064,7 @@ h4 { font-size: 20px; }
 
     .hero-content {
         order: 2;
+        min-height: auto;
     }
 
     .hero-image {
@@ -1047,6 +1078,7 @@ h4 { font-size: 20px; }
 
     .hero-buttons {
         flex-direction: column;
+        align-items: center;
     }
 
     .hero-buttons .btn {
@@ -1064,7 +1096,7 @@ h4 { font-size: 20px; }
     }
 
     .logos-section {
-        padding: 40px 25px;
+        padding: 20px 25px;
         overflow: hidden;
     }
 
@@ -1082,7 +1114,7 @@ h4 { font-size: 20px; }
     }
 
     .section {
-        padding: 60px 25px;
+        padding: 20px 25px;
     }
 
     .keynote-grid {
@@ -1093,6 +1125,11 @@ h4 { font-size: 20px; }
     .content-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .speak-at-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .credentials-grid {
@@ -1125,7 +1162,7 @@ h4 { font-size: 20px; }
     }
 
     .credentials-section {
-        padding-bottom: 30px;
+        padding: 20px 25px;
     }
 
     .credentials-divider {
