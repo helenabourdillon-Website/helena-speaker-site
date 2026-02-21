@@ -1083,6 +1083,7 @@ h4 { font-size: 20px; }
 
     .hero-buttons .btn {
         text-align: center;
+        width: 100%;
     }
 
     .credentials {
