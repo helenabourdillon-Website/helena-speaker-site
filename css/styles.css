@@ -1048,6 +1048,7 @@ h4 { font-size: 20px; }
     .nav-links a {
         font-size: 18px;
         letter-spacing: 3px;
+        color: var(--color-gold);
     }
 
     .nav-toggle {
