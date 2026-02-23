@@ -227,7 +227,7 @@ h4 { font-size: 20px; }
 }
 
 .hero-content p {
-    font-size: 18px;
+    font-size: 24px;
     color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 20px;
@@ -365,7 +365,7 @@ h4 { font-size: 20px; }
 }
 
 .section-subtitle {
-    font-size: 18px;
+    font-size: 24px;
     color: var(--color-text-secondary);
     line-height: 1.8;
     max-width: 700px;
@@ -396,7 +396,7 @@ h4 { font-size: 20px; }
     padding-left: 30px;
     position: relative;
     color: var(--color-text-secondary);
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.6;
 }
 
@@ -427,7 +427,7 @@ h4 { font-size: 20px; }
 
 .speak-at-grid p {
     color: var(--color-text-secondary);
-    font-size: 18px;
+    font-size: 24px;
     margin: 0;
 }
 
@@ -437,7 +437,7 @@ h4 { font-size: 20px; }
 
 .keynote-points-centred p {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 1.6;
     padding: 12px 0;
@@ -575,7 +575,7 @@ h4 { font-size: 20px; }
 }
 
 .testimonial-text {
-    font-size: 18px;
+    font-size: 24px;
     color: var(--color-text-secondary);
     line-height: 1.8;
     font-style: italic;
@@ -662,7 +662,7 @@ h4 { font-size: 20px; }
 }
 
 .cta-section p {
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -762,7 +762,7 @@ h4 { font-size: 20px; }
 }
 
 .page-header p {
-    font-size: 18px;
+    font-size: 24px;
     color: var(--color-text-secondary);
     max-width: 600px;
     margin: 0 auto 0;
@@ -793,7 +793,7 @@ h4 { font-size: 20px; }
 }
 
 .content-block p {
-    font-size: 18px;
+    font-size: 24px;
     color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 20px;
