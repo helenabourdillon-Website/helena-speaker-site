@@ -241,13 +241,13 @@ h4 { font-size: 20px; }
 }
 
 .hero-buttons {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     padding: 20px 60px 30px;
 }
 
 .hero-buttons .btn {
-    margin: 0 20px;
-    min-width: 230px;
     text-align: center;
 }
 
@@ -1073,12 +1073,13 @@ h4 { font-size: 20px; }
     }
 
     .hero-buttons {
+        grid-template-columns: 1fr;
         padding: 0 25px 30px;
+        gap: 15px;
     }
 
     .hero-buttons .btn {
-        display: block;
-        margin: 0 auto 15px;
+        margin: 0 auto;
     }
 
     .credentials {
