@@ -249,7 +249,8 @@ h4 { font-size: 20px; }
 
 .hero-buttons .btn {
     text-align: center;
-    min-width: 250px;
+    flex: 1;
+    max-width: 400px;
 }
 
 .hero-image {
