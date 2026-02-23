@@ -240,11 +240,12 @@ h4 { font-size: 20px; }
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
+    text-align: center;
     padding: 20px 60px 30px;
+}
+
+.hero-buttons .btn {
+    margin: 0 20px;
 }
 
 .hero-image {
@@ -393,7 +394,7 @@ h4 { font-size: 20px; }
     padding-left: 30px;
     position: relative;
     color: var(--color-text-secondary);
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
 }
 
@@ -424,7 +425,7 @@ h4 { font-size: 20px; }
 
 .speak-at-grid p {
     color: var(--color-text-secondary);
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
 }
 
@@ -434,7 +435,7 @@ h4 { font-size: 20px; }
 
 .keynote-points-centred p {
     color: #ffffff;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 1.6;
     padding: 12px 0;
@@ -572,7 +573,7 @@ h4 { font-size: 20px; }
 }
 
 .testimonial-text {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--color-text-secondary);
     line-height: 1.8;
     font-style: italic;
@@ -790,7 +791,7 @@ h4 { font-size: 20px; }
 }
 
 .content-block p {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 20px;
@@ -1069,13 +1070,12 @@ h4 { font-size: 20px; }
     }
 
     .hero-buttons {
-        flex-direction: column;
-        align-items: center;
         padding: 0 25px 30px;
     }
 
     .hero-buttons .btn {
-        text-align: center;
+        display: block;
+        margin: 0 auto 15px;
     }
 
     .credentials {
