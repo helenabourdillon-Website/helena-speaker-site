@@ -137,7 +137,7 @@ h4 { font-size: 20px; }
 }
 
 .site-header.scrolled {
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(10, 22, 40, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -201,6 +201,12 @@ h4 { font-size: 20px; }
 
 .nav-toggle.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* --- Page Background Gradients --- */
+.page-home,
+.page-about {
+    background: linear-gradient(to right, #0a1628 0%, #0d2847 30%, #1a1a1a 100%);
 }
 
 /* --- Hero Section --- */
@@ -303,7 +309,7 @@ h4 { font-size: 20px; }
 
 /* --- Client Logos --- */
 .logos-section {
-    background: var(--color-bg-dark);
+    background: transparent;
     padding: 20px 60px;
 }
 
@@ -687,7 +693,7 @@ h4 { font-size: 20px; }
 
 /* --- Footer --- */
 .site-footer {
-    background: var(--color-bg);
+    background: transparent;
     padding: 40px 60px;
     border-top: none;
 }
