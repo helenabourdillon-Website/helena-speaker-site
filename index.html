@@ -398,7 +398,12 @@
                   calLink: "helenabourdillon",
                   layout: "month_view",
                   config: {
-                    theme: "dark"
+                    theme: "dark",
+                    cssVarsPerTheme: {
+                      dark: {
+                        "cal-bg": "#1a1a1a"
+                      }
+                    }
                   }
                 });
                 Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
