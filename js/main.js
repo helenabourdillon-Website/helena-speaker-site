@@ -40,6 +40,12 @@ if (fadeElements.length > 0) {
     });
 
     fadeElements.forEach(el => observer.observe(el));
+
+    // Fallback: ensure all fade-in elements become visible after 2s
+    // in case IntersectionObserver doesn't fire (slow devices, print, etc.)
+    setTimeout(() => {
+        fadeElements.forEach(el => el.classList.add('visible'));
+    }, 2000);
 }
 
 // Testimonials Carousel (infinite loop)
