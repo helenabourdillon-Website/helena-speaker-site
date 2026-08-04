@@ -334,7 +334,7 @@ h4 { font-size: 20px; }
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px 60px;
+    gap: 40px 90px;
     flex-wrap: wrap;
 }
 
