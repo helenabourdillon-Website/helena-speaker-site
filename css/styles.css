@@ -323,12 +323,19 @@ h4 { font-size: 20px; }
 }
 
 .logos-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    align-items: center;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 60px;
+    flex-wrap: wrap;
 }
 
 .client-logo {
@@ -1115,11 +1122,12 @@ h4 { font-size: 20px; }
     }
 
     .logos-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px 40px;
+        gap: 20px;
         max-width: 100%;
+    }
+
+    .logos-row {
+        gap: 25px 35px;
     }
 
     .client-logo {
