@@ -325,7 +325,7 @@ h4 { font-size: 20px; }
 .logos-grid {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
 }
